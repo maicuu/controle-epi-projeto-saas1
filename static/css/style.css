@@ -1,0 +1,209 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe a altura mínima da tela */
+}
+
+/* --- ESTILOS DO HEADER --- */
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #28834d;
+    padding: 10px 50px; /* Recuo geral do conteúdo do header */
+}
+
+#logo {
+    width: 200px; /* Tamanho da logo */
+    height: auto;
+    display: block;
+}
+
+#Nav { /* O container dos controles do lado direito do header */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre o select e o botão */
+}
+
+select {
+    padding: 8px 15px;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+}
+
+#btn-adm {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid rgba(223, 244, 229, 0.8);
+    border-radius: 5px;
+    background-color: rgba(40, 131, 77, 0.7); /* Fundo verde translúcido */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#btn-adm:hover {
+    background-color: rgba(40, 131, 77, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#btn-adm:active {
+    background-color: rgba(40, 131, 77, 1);
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* --- ESTILOS DA MAIN SECTION (ÁREA VERDE CLARA) --- */
+#main-section {
+    background-color: #dff4e5; /* Verde claro */
+    flex-grow: 1; /* Ocupa todo o espaço vertical restante */
+    display: flex; /* Flex container para left-content-main e img-section */
+    flex-direction: row; /* Conteúdo em linha (texto/botões e imagem) */
+    align-items: center; /* Centraliza itens verticalmente */
+    justify-content: space-around; /* Distribui espaço entre os dois blocos (texto+botões e imagem) */
+    padding: 20px 50px; /* Padding interno para afastar o conteúdo das bordas da seção */
+    gap: 20px; /* Espaçamento entre left-content-main e img-section */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    min-height: 300px;
+}
+
+#left-content-main { /* O novo container para o h1 e os botões */
+    display: flex;
+    flex-direction: column; /* Conteúdo interno em coluna */
+    align-items: center; /* Centraliza o h1 e os botões horizontalmente */
+    text-align: center; /* Centraliza o texto do h1 */
+    max-width: 600px; /* Largura máxima para o bloco de texto */
+    margin-top: -50px; /* Ajuste este valor para puxar o texto para cima */
+    /* Removi(maicon) margin-left para centralizar melhor */
+}
+
+#left-content-main h1 { /* Estilo para o H1 dentro da main-section */
+    font-size: 40px; /* Ajuste o tamanho da fonte do título principal */
+    color: #333;
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    line-height: 1.2;
+}
+
+.main-buttons-container { /* Container dos botões principais */
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+    justify-content: center; /* Centraliza os botões dentro do container */
+    align-items: center;
+    /* margin-top: 20px; se alguem achar necessario espaço adicional entre h1 e botões */
+}
+
+.main-button { /* Botões Emitir Epi e Verificar Certificação */
+    background-color: #28834d;
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: none; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
+.main-button:hover {
+    background-color: #1e6c3d;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+.main-button:active {
+    background-color: #1a5c32;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+#img-section { /* Container da imagem do EPI na main-section */
+    max-width: 300px; /* Ajuste a largura máxima do container da imagem */
+    flex-shrink: 0; /* Impede que a imagem encolha demais */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem dentro de seu próprio container */
+    align-items: center;
+}
+
+#epi-main {
+    max-width: 100%; /* Garante que a imagem não ultrapasse seu container */
+    height: auto;
+    object-fit: contain; /* Redimensiona a imagem para caber sem cortar, mantendo proporção */
+}
+
+
+/* --- ESTILOS DA SEÇÃO DE ESTATÍSTICAS --- */
+#stats-section {
+    background-color: #28834d; /* Verde escuro de fundo da seção */
+    padding: 60px 50px; /* Espaçamento interno da seção */
+    display: flex; /* Transforma a seção em um container flex para o grid de cards */
+    justify-content: center; /* Centraliza o container dos cards horizontalmente */
+    align-items: center; /* Centraliza verticalmente se a seção for maior */
+}
+
+.stats-cards-grid-container { /* O container que usa Grid para os cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsividade: 3 colunas, mas ajusta para caber */
+    gap: 30px; /* Espaço entre os cards */
+    max-width: 1000px; /* Largura máxima do grid de cards */
+    margin: 0 auto; /* Centraliza o grid de cards dentro da stats-section */
+    width: 100%; /* Garante que o grid ocupe a largura máxima disponível */
+}
+
+.stat-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto e os ícones */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza conteúdo (ícone, h3, p) */
+    justify-content: space-between; /* Distribui o espaço entre header e body do card */
+    min-height: 200px; /* Altura mínima para os cards */
+}
+
+.stat-card-header { /* Container do ícone e h3 */
+    display: flex;
+    flex-direction: column; /* Ícone em cima do h3 */
+    align-items: center; /* Centraliza ícone e h3 */
+    margin-bottom: 15px; /* Espaço entre o cabeçalho e o corpo do card */
+}
+
+.stat-icon { /* Ícone dentro do card */
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 10px; /* Espaço abaixo do ícone */
+}
+
+.stat-card-header h3 { /* Título do card (h3) */
+    font-size: 20px;
+    color: #333;
+    line-height: 1.2; /* Para textos com <br> */
+}
+
+.stat-card-body { /* Container do parágrafo */
+    flex-grow: 1; /* Permite que o body ocupe o espaço restante */
+    display: flex;
+    align-items: flex-start; /* Alinha o parágrafo ao topo do seu container */
+    justify-content: center; /* Centraliza o parágrafo horizontalmente */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+.stat-card-body p { /* O parágrafo dentro do card */
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0; /* Garante que não há margens adicionais no p */
+}
+
+/* Remova o seletor 'section' genérico se não for mais usado */
+/* section { ... } */

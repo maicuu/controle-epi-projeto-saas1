@@ -1,9 +1,65 @@
-<!-- templates/teste.html -->
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Project SaaS</title>
+</head>
+<body>
 
-{% block title %}Página de Teste{% endblock %}
+    <header id="header">
+        <img src="../static/img/EPINow.png" id="logo" alt="Logo EPINow">
+        <div id="Nav">
+            <select>
+                <option>Português</option>
+                <option>English</option>
+            </select>
+            <button id="btn-adm">Visão Gestor</button>
+        </div>
+    </header>
 
-{% block content %}
-  <h2>Esta é a página de teste</h2>
-  <p>Se você está vendo isso, está funcionando!</p>
-{% endblock %}
+    <main id="main-section">
+        <div id="left-content-main"> <h1>Bem-vindo ao sistema de controle de EPIs</h1>
+            <div class="main-buttons-container"> <button class="main-button">Emitir Epi</button> <button class="main-button">Verificar Certificação</button>
+            </div>
+        </div>
+
+        <div id="img-section">
+            <img src="../static/img/epis.png" id="epi-main" alt="Imagem EPI Principal">
+        </div>
+    </main>
+
+    <section id="stats-section">
+        <div class="stats-cards-grid-container"> <div class="stat-card">
+                <div class="stat-card-header"> <img src="../static/img/estatisticaas.png" class="stat-icon" alt="Ícone Estatísticas"> <h3>Estatísticas de<br>Uso</h3> </div>
+                <div class="stat-card-body"> <p>Veja gráficos sobre o uso<br>de EPIs na sua empresa</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <img src="../static/img/capacete.png" class="stat-icon" alt="Ícone Capacete">
+                    <h3>Itens Ativos</h3>
+                </div>
+                <div class="stat-card-body">
+                    <p>Gerencie os EPIs que<br>atualmente estão em<br>uso</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <img src="../static/img/registro.png" class="stat-icon" alt="Ícone Registro">
+                    <h3>Histórico de Registros</h3>
+                </div>
+                <div class="stat-card-body">
+                    <p>Acesse registros<br>passados de EPIs<br>emitidos</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    </body>
+</html>
