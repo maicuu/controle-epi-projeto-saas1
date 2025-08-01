@@ -85,12 +85,12 @@ select {
     align-items: center; /* Centraliza o h1 e os botões horizontalmente */
     text-align: center; /* Centraliza o texto do h1 */
     max-width: 600px; /* Largura máxima para o bloco de texto */
-    margin-top: -50px; /* Ajuste este valor para puxar o texto para cima */
+    margin-top: -50px; /* este valor para puxar o texto para cima */
     /* Removi(maicon) margin-left para centralizar melhor */
 }
 
 #left-content-main h1 { /* Estilo para o H1 dentro da main-section */
-    font-size: 40px; /* Ajuste o tamanho da fonte do título principal */
+    font-size: 40px; /* o tamanho da fonte do título principal */
     color: #333;
     margin-bottom: 30px; /* Espaço abaixo do título */
     line-height: 1.2;
@@ -125,7 +125,7 @@ select {
 }
 
 #img-section { /* Container da imagem do EPI na main-section */
-    max-width: 300px; /* Ajuste a largura máxima do container da imagem */
+    max-width: 300px; /* a largura máxima do container da imagem */
     flex-shrink: 0; /* Impede que a imagem encolha demais */
     display: flex;
     justify-content: center; /* Centraliza a imagem dentro de seu próprio container */
@@ -204,6 +204,3 @@ select {
     line-height: 1.5;
     margin: 0; /* Garante que não há margens adicionais no p */
 }
-
-/* Remova o seletor 'section' genérico se não for mais usado */
-/* section { ... } */
